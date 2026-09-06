@@ -78,6 +78,6 @@ jobs:
 
       - name: Push Docker image to GHCR
         run: |
-          IMAGE_NAME=ghcr.io/${{ github.repository_owner }}/clouddeploy
+          IMAGE_NAME=ghcr.io/${GITHUB_REPOSITORY_OWNER,,}/clouddeploy
           docker tag clouddeploy:test $IMAGE_NAME:latest
           docker push $IMAGE_NAME:latest
