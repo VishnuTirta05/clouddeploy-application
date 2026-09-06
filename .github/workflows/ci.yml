@@ -1,3 +1,4 @@
+
 name: Django CI
 
 on:
@@ -62,3 +63,7 @@ jobs:
           DJANGO_SECRET_KEY: test-secret-key
           DJANGO_DEBUG: "True"
         run: pytest
+
+      - name: Build Docker image
+        run: docker build -t clouddeploy:test .
+
